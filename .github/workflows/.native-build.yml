@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Maven clean package
-        run: mvn clean package -Pnative -Dmaven.test.skip=true
+        run:  PROFILE_STATE=prod mvn clean package -Pnative -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
@@ -52,7 +52,7 @@ jobs:
           path: target/
 
       - name: Run native compile
-        run: mvn -Pnative native:compile -Dmaven.test.skip=true
+        run:  PROFILE_STATE=prod mvn clean package -Pnative -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
