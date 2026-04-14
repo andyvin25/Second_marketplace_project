@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Maven clean package
-        run: mvn clean package -Pnative -DskipTests
+        run: mvn clean package -Pnative -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
