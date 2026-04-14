@@ -1,4 +1,5 @@
 name: Native Build
+
 on:
   push:
     branches: ["**"]
@@ -6,23 +7,52 @@ on:
     branches: ["**"]
 
 jobs:
+  compile:
+    name: Clean Package (Native)
+    runs-on: ubuntu-latest
+    container:
+      image: maven:3.9.14-eclipse-temurin-25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Maven clean package
+        run: mvn clean package -Pnative -DskipTests
+
+      - name: List target
+        run: ls -la target/
+
+      - name: Upload target artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: target
+          path: target/
+
   build:
     name: Build Native Image
     runs-on: ubuntu-latest
+    needs: compile
     container:
-      image: ghcr.io/graalvm/native-image-community:21
+      image: ghcr.io/graalvm/native-image-community:25.0.2-ol8-20260120
       options: --entrypoint ""
-
     steps:
+      - name: Install required tools
+        run: microdnf install -y gzip tar curl findutils
+
       - uses: actions/checkout@v4
 
       - name: Install Maven
         run: |
-          curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz | tar -xz -C /opt
-          ln -s /opt/apache-maven-3.9.6/bin/mvn /usr/local/bin/mvn
+          curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.14/binaries/apache-maven-3.9.14-bin.tar.gz | tar -xz -C /opt
+          ln -s /opt/apache-maven-3.9.14/bin/mvn /usr/local/bin/mvn
 
-      - name: Build & compile native image
-        run: mvn clean package native:compile -Pnative -Dmaven.test.skip=true
+      - name: Download target artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: target
+          path: target/
+
+      - name: Run native compile
+        run: mvn -Pnative native:compile -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
