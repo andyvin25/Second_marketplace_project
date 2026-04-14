@@ -1,0 +1,1504 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger Seller API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.server.test/v3"
+    }
+  ],
+  "tags": [
+    {
+      "name": "seller",
+      "description": "Operations about seller"
+    },
+    {
+      "name": "store",
+      "description": "Operations about store"
+    },
+    {
+      "name": "etalation",
+      "description": "Operations about etalations"
+    },
+    {
+      "name": "order",
+      "description": "Operations about order"
+    },
+    {
+      "name": "courier",
+      "description": "Operations about courier"
+    },
+    {
+      "name": "store_banner",
+      "description": "Operations about courier"
+    },
+    {
+      "name": "banner_picture",
+      "description": "Operations about courier"
+    },
+    {
+      "name": "product",
+      "description": "Operations about product"
+    },
+    {
+      "name": "product_picture",
+      "description": "Operations about product"
+    }
+  ],
+  "paths": {
+    "/seller": {
+      "get": {
+        "summary": "List of Sellers",
+        "operationId": "List of sellers",
+        "tags":["seller"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/seller"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Seller",
+            "in": "query",
+            "description": "For filtering seller based on created time",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add the seller",
+        "operationId": "Add the seller",
+        "tags":["seller"],
+        "responses": {
+          "201": {
+            "description": "Successfully create user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "items": {
+                    "$ref": "#/components/schemas/seller"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/seller/{sellerId}": {
+      "get": {
+        "summary": "Get the seller with id",
+        "operationId": "Get the seller with id",
+        "tags":["seller"],
+        "parameters": [
+          {
+            "name": "Seller",
+            "in": "path",
+            "description": "ID of Seller to return",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the ID"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the seller with id",
+        "operationId": "Update the seller with id",
+        "tags":["seller"],
+        "responses": {
+          "200": {
+            "description": "Your data was successfully updated"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Seller",
+            "in": "path",
+            "description": "ID of Seller to return",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Delete the seller with id",
+        "operationId": "the seller with id",
+        "tags":["seller"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    }, 
+    "/store": {
+      "get": {
+        "summary": "Lists of stores",
+        "operationId": "Lists of stores",
+        "tags":["store"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the Store",
+        "operationId": "Add the Store",
+        "tags":["store"],
+        "responses": {
+          "201": {
+            "description": "Successfully create Store"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeId}": {
+      "get": {
+        "summary": "Get the store with id",
+        "operationId": "Get the store with id",
+        "tags":["store"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the ID"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the store with id",
+        "operationId": "Update the store with id",
+        "tags":["store"],
+        "responses": {
+          "200": {
+            "description": "Your data was successfully updated"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the store with id",
+        "operationId": "the store with id",
+        "tags":["store"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}": {
+      "get": {
+        "summary": "Get the Store by name",
+        "operationId": "Get the Store by name",
+        "tags":["store"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the ID"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the store with name",
+        "operationId": "Update the store with name",
+        "tags":["store"],
+        "responses": {
+          "200": {
+            "description": "Your data was successfully updated"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the store with id",
+        "operationId": "the store with id",
+        "tags":["store"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/etalation": {
+      "get": {
+        "summary": "Get all of etalation from a store name",
+        "operationId": "Get all of etalation from a store name",
+        "tags":["etalation"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        },
+        "parameters": [
+          {
+            "name": "etalation",
+            "in": "query",
+            "description": "search Etalation in store",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add the etalation to a store name",
+        "operationId": "Add the etalation a store name",
+        "tags":["etalation"],
+        "responses": {
+          "201": {
+            "description": "Successfully create user"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/{etalationId}": {
+      "get": {
+        "summary": "Get the seller with id",
+        "operationId": "Get the seller with id",
+        "tags":["etalation"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the ID"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        },
+        "parameters": [
+          {
+            "name": "etalation",
+            "in": "query",
+            "description": "ID of Seller to return",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update the etalation with id",
+        "operationId": "Update the etalation with id",
+        "tags":["etalation"],
+        "responses": {
+          "200": {
+            "description": "Your data was successfully updated"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the etalation with id",
+        "operationId": "the etalation with id",
+        "tags":["etalation"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/order": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["order"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["order"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/order/{orderId}": {
+      "get": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["order"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved the ID"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update the etalation with id",
+        "operationId": "Update the etalation with id",
+        "tags":["order"],
+        "responses": {
+          "200": {
+            "description": "Your data was successfully updated"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete the etalation with id",
+        "operationId": "the etalation with id",
+        "tags":["order"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      } 
+    },
+    "/{storeName}/courier": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["courier"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["courier"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["courier"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/{courierId}": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["courier"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["courier"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "put": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["courier"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["courier"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/store_banner": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["store_banner"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["store_banner"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["store_banner"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/store_banner/{bannerId}": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["store_banner"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["store_banner"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["store_banner"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/bannerPicture": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["banner_picture"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["banner_picture"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["banner_picture"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/product": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["product"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["product"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["product"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/product/{productId}": {
+      "get": {
+        "summary": "Get all of order from a store name",
+        "operationId": "Get all of order from a store name",
+        "tags":["product"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["product"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["store_banner"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/product/product_picture": {
+      "get": {
+        "summary": "Get all of product picture from listed product",
+        "operationId": "Get all of product picture from listed product",
+        "tags":["product_picture"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        },
+        "parameters": [
+          {
+            "name": "Seller",
+            "in": "query",
+            "description": "For filtering seller based on created time",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "varchar(30)"
+            }
+          }
+        ]
+      },
+      "post": {
+        "summary": "Add the order to a store",
+        "operationId": "Add the order to a store",
+        "tags":["product_picture"],
+        "responses": {
+          "201": {
+            "description": "Successfully create order"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }, 
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Get the order from the store based on id",
+        "operationId": "Get the order from the store based on id",
+        "tags":["product_picture"],
+        "responses": {
+          "201": {
+            "description": "Successfully deleted"
+          },
+          "404": {
+            "description": "No such user exists"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "406": {
+            "description": "The form is required, please fill the form"
+          },
+          "408": {
+            "description": "Request Timeout"
+          },
+          "415": {
+            "description": "unsuported media type"
+          }
+        }
+      }
+    },
+    "/{storeName}/product/product_picture/{productPictureId}": {
+      "get": {
+        "summary": "See a specific product picture from listed product",
+        "operationId": "See a specific product picture from listed product",
+        "tags":["product_picture"],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieve the data"
+          },
+          "400": {
+            "description": "You are Not Authorized"
+          },
+          "408": {
+            "description": "Request Timeout"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "seller": {
+        "type": "object",
+        "properties": {
+          "seller_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the seller"
+          },
+          "seller_email": {
+            "type": "string",
+            "maxLength": 150,
+            "format": "email",
+            "description": "Seller's email address"
+          },
+          "seller_name": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Seller's full name"
+          },
+          "seller_password": {
+            "type": "string",
+            "maxLength": 20,
+            "format": "password",
+            "description": "Seller's password (should be stored securely)"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp of when the seller was created"
+          },
+          "number_of_stores": {
+            "type": "integer",
+            "description": "Number of stores owned by the seller"
+          }
+        },
+        "required": ["seller_id",
+          "seller_email",
+          "seller_name",
+          "seller_password",
+          "created_at",
+          "number_of_stores"]
+      },
+      "store": {
+        "type": "object",
+        "properties": {
+          "store_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the seller"
+          },
+          "store_name": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Seller's full name"
+          },
+          "store_operating_hours_start": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "store_operating_hours_end": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "store_status": {
+            "type": "string",
+            "maxLength": 20,
+            "description": "Seller's full name"
+          },
+          "number_of_sales": {
+            "type": "integer",
+            "description": "Seller's full name"
+          },
+          "store_logo_path": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Seller's full name"
+          }
+        }
+      },
+      "etalation": {
+        "type": "object",
+        "properties": {
+          "etalation_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the seller"
+          },
+          "etalation_name": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Seller's full name"
+          },
+          "created_at": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          }
+        }
+      },
+      "order": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the seller"
+          },
+          "listed_product_id": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Seller's full name"
+          },
+          "product_quantity": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "courier_id": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "created_at": {
+            "type": "string",
+            "maxLength": 20,
+            "description": "Seller's full name"
+          },
+          "status": {
+            "type": "string",
+            "maxLength": 20,
+            "description": "Seller's full name"
+          }
+        }
+      },
+      "store_banner": {
+        "type": "object",
+        "properties": {
+          "banner_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the seller"
+          },
+          "store_id": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "Seller's full name"
+          },
+          "numbers_of_banner": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "etalation_id": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "Seller's full name"
+          },
+          "created_at": {
+            "type": "string",
+            "maxLength": 20,
+            "description": "Seller's full name"
+          }
+        }
+      },
+      "listed_product": {
+        "type": "object",
+        "properties": {
+          "listed_product_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the product id"
+          },
+          "store_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "Unique identifier for the store id"
+          },
+          "listed_product_name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "product full name"
+          },
+          "listed_product_condition": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "product condition"
+          },
+          "quantity_of_available_product": {
+            "type": "integer",
+            "description": "quantity of available product"
+          },
+          "product_type_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "what is the type of this product",
+            "example": "color cloth, blue beetle" 
+          },
+          "product_price": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "product price",
+            "example": "Rp 50.000" 
+          },
+          "etalation_id": {
+            "type": "string",
+            "maxLength": 30,
+            "description": "what is the etalation of this product",
+            "example": "art, hardware" 
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "product description",
+            "example": "product memakai bahan terbaik dari kepompong ulat sutra dan garansi produk terkoyak adalah 100% uang kembali. Dengan kualitas yang terbaik produk tersebut tidak mungkin sobek" 
+          },
+          "order_minimum": {
+            "type": "integer",
+            "description": "product description",
+            "example": "1"
+          },
+          "unit_of_product": {
+            "type": "string",
+            "maxLength": 10,
+            "description": "product unit after quantity",
+            "example": "buah / kilo / gram"
+          },
+          "shipped_from": {
+            "type": "string",
+            "maxLength": 600,
+            "description": "buah",
+            "example": "kepulauan mentawai"
+          },
+          "number_of_view": {
+            "type": "integer",
+            "description": "how many people view of this product",
+            "example": "16"
+          },
+          "product_rate": {
+            "type": "integer",
+            "description": "what people give the average rate of this product 1-5",
+            "example": "3.5"
+          },
+          "number_of_wishlist": {
+            "type": "integer",
+            "description": "how much people add this product into their wishlist",
+            "example": "23"
+          },
+          "is_it_currently_bundled": {
+            "type": "boolean",
+            "description": "is the product currently has bundle group",
+            "example": "true"
+          },
+          "has_it_have_discount": {
+            "type": "boolean",
+            "description": "is the product currently has discount",
+            "example": "false"
+          },
+          "created_at": {
+            "type": "string",
+            "maxLength": 20,
+            "description": "created at"
+          }
+        }
+      }
+    }
+  }
+}

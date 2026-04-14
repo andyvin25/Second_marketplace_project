@@ -1,0 +1,99 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Registration</title>
+</head>
+<script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>
+<body>
+    <form th:action="@{/register}" method="post" th:object="${accountDto}" enctype="text/plain">
+        <h2>User Register</h2>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" th:field="*{email}" />
+<!--            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" />
+<!--            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>-->
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" />
+<!--            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
+        </div>
+        <div>
+            <label for="repeatPassword">Repeat Password:</label>
+            <input type="password" id="repeatPassword" th:field="*{repeatPassword}" />
+<!--            <span th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></span>-->
+        </div>
+        <button onclick="register()" type="button">Register</button>
+<!--        <a hx-post="/api/users" th:href="@{/user/login}" hx-target="">Register</a>-->
+    </form>
+    <script>
+        const emailInput = document.getElementById("email")
+        const nameInput = document.getElementById("name")
+        const passwordInput = document.getElementById("password")
+        const repeatPasswordInput = document.getElementById("repeatPassword")
+
+        function register() {
+            fetch("http://localhost:8080/api/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "email": emailInput.value,
+                    "name": nameInput.value,
+                    "password": passwordInput.value,
+                    "repeat_password": repeatPasswordInput.value
+                })
+            }).then(res => {
+                console.log(res.status)
+                if (res.status === 201) {
+                    window.location.href = "http://localhost:8080/user/login"
+                }
+                return res.json()
+            })
+            .then(data => console.log(data))
+            .catch(err => console.error("ERROR"))
+        }
+    </script>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <title>User Registration</title>-->
+<!--    <script src="https://unpkg.com/htmx.org@2.0.4" integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+" crossorigin="anonymous"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>User Registration</h1>-->
+<!--<form th:action="@{/register/user_account_creation_dto}" method="post" th:object="${user_account_creation_dto}">-->
+<!--    <div>-->
+<!--        <label for="email">Email:</label>-->
+<!--        <input type="email" id="email" th:field="*{email}" />-->
+<!--        <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="name">Name:</label>-->
+<!--        <input type="text" id="name" th:field="*{name}" />-->
+<!--        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="password">Password:</label>-->
+<!--        <input type="password" id="password" th:field="*{password}" />-->
+<!--        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <label for="repeatPassword">Repeat Password:</label>-->
+<!--        <input type="password" id="repeatPassword" th:field="*{repeatPassword}" />-->
+<!--        <span th:if="${#fields.hasErrors('repeatPassword')}" th:errors="*{repeatPassword}"></span>-->
+<!--    </div>-->
+<!--    <button type="submit">Register</button>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
