@@ -52,7 +52,7 @@ jobs:
           path: target/
 
       - name: Run native compile
-        run:  PROFILE_STATE=prod ./mvnw -Pnative native:compile -Dmaven.test.skip=true
+        run:  PROFILE_STATE=prod mvn -Pnative native:compile -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
