@@ -28,7 +28,6 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 
 import java.io.IOException;
 
-@RegisterReflectionForBinding
 @Component
 @Slf4j
 public class AuthTokenFilter extends OncePerRequestFilter {
@@ -37,14 +36,12 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     private JwtUtil jwtUtil;
 
     @Autowired
-    @Lazy
     private HandlerExceptionResolver handlerExceptionResolver;
 
     @Autowired
     private RateLimiterService rateLimiterService;
 
     @Autowired
-    @Lazy
     private UserDetailsService userDetailsService;
 
     @Autowired

@@ -126,9 +126,6 @@
     "interfaces":["org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity"]
   },
   {
-    "interfaces":["org.springframework.security.core.userdetails.UserDetailsService","org.springframework.aop.SpringProxy","org.springframework.aop.framework.Advised","org.springframework.core.DecoratingProxy"]
-  },
-  {
     "interfaces":["org.springframework.web.bind.annotation.ControllerAdvice"]
   },
   {
@@ -148,8 +145,5 @@
   },
   {
     "interfaces":["org.springframework.web.bind.annotation.RequestPart"]
-  },
-  {
-    "interfaces":["org.springframework.web.servlet.HandlerExceptionResolver","org.springframework.aop.SpringProxy","org.springframework.aop.framework.Advised","org.springframework.core.DecoratingProxy"]
   }
 ]

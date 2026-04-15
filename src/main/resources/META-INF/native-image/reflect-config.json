@@ -6,9 +6,6 @@
   "name":"[J"
 },
 {
-  "name":"[Lcom.fasterxml.jackson.databind.ser.Serializers;"
-},
-{
   "name":"[Lcom.zaxxer.hikari.util.ConcurrentBag$IConcurrentBagEntry;"
 },
 {
@@ -55,9 +52,6 @@
 },
 {
   "name":"[Ljava.sql.Statement;"
-},
-{
-  "name":"[Ljava.util.Map$Entry;"
 },
 {
   "name":"[Lorg.hibernate.annotations.Check;"
@@ -342,15 +336,7 @@
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
   "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":["com.marketplace.Auth.domain.UserService","com.marketplace.Auth.api.UserMapper","com.marketplace.Auth.domain.RoleService","com.marketplace.Auth.domain.AuthService","com.marketplace.Auth.domain.PermissionService"] }, {"name":"refreshToken","parameterTypes":["java.lang.String","jakarta.servlet.http.HttpServletResponse"] }, {"name":"signIn","parameterTypes":["com.marketplace.Auth.api.UserLoginDto","java.lang.String","jakarta.servlet.http.HttpServletResponse"] }, {"name":"userLogout","parameterTypes":["java.lang.String","jakarta.servlet.http.HttpServletResponse"] }]
-},
-{
-  "name":"com.marketplace.Auth.api.UserLoginDto",
-  "allDeclaredFields":true,
-  "allRecordComponents":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
+  "methods":[{"name":"<init>","parameterTypes":["com.marketplace.Auth.domain.UserService","com.marketplace.Auth.api.UserMapper","com.marketplace.Auth.domain.RoleService","com.marketplace.Auth.domain.AuthService","com.marketplace.Auth.domain.PermissionService"] }]
 },
 {
   "name":"com.marketplace.Auth.api.UserMapper",
@@ -452,7 +438,7 @@
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
   "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"createRefreshToken","parameterTypes":["com.marketplace.Auth.domain.User","java.lang.String"] }, {"name":"deleteRefreshToken","parameterTypes":["com.marketplace.Auth.domain.RefreshToken"] }, {"name":"getByToken","parameterTypes":["java.lang.String"] }, {"name":"isExpired","parameterTypes":["com.marketplace.Auth.domain.RefreshToken"] }, {"name":"saveRefreshToken","parameterTypes":["com.marketplace.Auth.domain.RefreshToken"] }]
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"com.marketplace.Auth.domain.RefreshTokenService$$SpringCGLIB$$0",
@@ -547,7 +533,7 @@
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
   "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getActiveUserByEmail","parameterTypes":["java.lang.String"] }, {"name":"getUserByEmail","parameterTypes":["java.lang.String"] }]
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"com.marketplace.Auth.domain.UserService$$SpringCGLIB$$0",
@@ -717,7 +703,7 @@
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
   "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"handleNotFoundError","parameterTypes":["com.marketplace.Exception.ResourceNotFoundException"] }]
+  "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
   "name":"com.marketplace.MarketplaceApplication",
@@ -1627,81 +1613,7 @@
   "name":"groovy.lang.MetaClass"
 },
 {
-  "name":"io.jsonwebtoken.Claims",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.Header",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.Identifiable",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.JwsHeader",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.ProtectedHeader",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.impl.DefaultClaims",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true
-},
-{
-  "name":"io.jsonwebtoken.impl.DefaultHeader",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.impl.DefaultJwsHeader",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true
-},
-{
-  "name":"io.jsonwebtoken.impl.DefaultJwtBuilder",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"io.jsonwebtoken.impl.DefaultProtectedHeader",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.impl.ParameterMap",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.impl.lang.Nameable",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"io.jsonwebtoken.impl.lang.ParameterReadable",
-  "queryAllDeclaredMethods":true
-},
-{
   "name":"io.jsonwebtoken.impl.security.KeysBridge"
-},
-{
-  "name":"io.jsonwebtoken.impl.security.StandardKeyOperations",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"io.jsonwebtoken.impl.security.StandardSecureDigestAlgorithms",
-  "methods":[{"name":"<init>","parameterTypes":[] }]
-},
-{
-  "name":"io.jsonwebtoken.jackson.io.JacksonSerializer"
-},
-{
-  "name":"io.jsonwebtoken.security.X509Accessor",
-  "queryAllDeclaredMethods":true
 },
 {
   "name":"io.lettuce.core.RedisClient"
@@ -2072,13 +1984,13 @@
   "name":"jakarta.persistence.EntityManager",
   "queryAllDeclaredMethods":true,
   "queryAllPublicMethods":true,
-  "methods":[{"name":"<init>","parameterTypes":["jdk.proxy2.$Proxy179"] }, {"name":"callWithConnection","parameterTypes":["jakarta.persistence.ConnectionFunction"] }, {"name":"clear","parameterTypes":[] }, {"name":"close","parameterTypes":[] }, {"name":"contains","parameterTypes":["java.lang.Object"] }, {"name":"createEntityGraph","parameterTypes":["java.lang.Class"] }, {"name":"createEntityGraph","parameterTypes":["java.lang.String"] }, {"name":"createNamedQuery","parameterTypes":["java.lang.String"] }, {"name":"createNamedQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createNamedStoredProcedureQuery","parameterTypes":["java.lang.String"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.TypedQueryReference"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaDelete"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaQuery"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaSelect"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaUpdate"] }, {"name":"createQuery","parameterTypes":["java.lang.String"] }, {"name":"createQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String","java.lang.Class[]"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String","java.lang.String[]"] }, {"name":"detach","parameterTypes":["java.lang.Object"] }, {"name":"find","parameterTypes":["jakarta.persistence.EntityGraph","java.lang.Object","jakarta.persistence.FindOption[]"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","java.util.Map"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.FindOption[]"] }, {"name":"flush","parameterTypes":[] }, {"name":"from","parameterTypes":["jdk.proxy2.$Proxy179"] }, {"name":"getCacheRetrieveMode","parameterTypes":[] }, {"name":"getCacheStoreMode","parameterTypes":[] }, {"name":"getCriteriaBuilder","parameterTypes":[] }, {"name":"getDelegate","parameterTypes":[] }, {"name":"getEntityGraph","parameterTypes":["java.lang.String"] }, {"name":"getEntityGraphs","parameterTypes":["java.lang.Class"] }, {"name":"getEntityManagerFactory","parameterTypes":[] }, {"name":"getFlushMode","parameterTypes":[] }, {"name":"getLockMode","parameterTypes":["java.lang.Object"] }, {"name":"getMetamodel","parameterTypes":[] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getReference","parameterTypes":["java.lang.Class","java.lang.Object"] }, {"name":"getReference","parameterTypes":["java.lang.Object"] }, {"name":"getTransaction","parameterTypes":[] }, {"name":"isJoinedToTransaction","parameterTypes":[] }, {"name":"isOpen","parameterTypes":[] }, {"name":"joinTransaction","parameterTypes":[] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","jakarta.persistence.LockOption[]"] }, {"name":"merge","parameterTypes":["java.lang.Object"] }, {"name":"of","parameterTypes":["jdk.proxy2.$Proxy179"] }, {"name":"persist","parameterTypes":["java.lang.Object"] }, {"name":"refresh","parameterTypes":["java.lang.Object"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"refresh","parameterTypes":["java.lang.Object","java.util.Map"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.RefreshOption[]"] }, {"name":"remove","parameterTypes":["java.lang.Object"] }, {"name":"runWithConnection","parameterTypes":["jakarta.persistence.ConnectionConsumer"] }, {"name":"setCacheRetrieveMode","parameterTypes":["jakarta.persistence.CacheRetrieveMode"] }, {"name":"setCacheStoreMode","parameterTypes":["jakarta.persistence.CacheStoreMode"] }, {"name":"setFlushMode","parameterTypes":["jakarta.persistence.FlushModeType"] }, {"name":"setProperty","parameterTypes":["java.lang.String","java.lang.Object"] }, {"name":"unwrap","parameterTypes":["java.lang.Class"] }, {"name":"valueOf","parameterTypes":["jdk.proxy2.$Proxy179"] }]
+  "methods":[{"name":"<init>","parameterTypes":["jdk.proxy2.$Proxy174"] }, {"name":"callWithConnection","parameterTypes":["jakarta.persistence.ConnectionFunction"] }, {"name":"clear","parameterTypes":[] }, {"name":"close","parameterTypes":[] }, {"name":"contains","parameterTypes":["java.lang.Object"] }, {"name":"createEntityGraph","parameterTypes":["java.lang.Class"] }, {"name":"createEntityGraph","parameterTypes":["java.lang.String"] }, {"name":"createNamedQuery","parameterTypes":["java.lang.String"] }, {"name":"createNamedQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createNamedStoredProcedureQuery","parameterTypes":["java.lang.String"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createNativeQuery","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.TypedQueryReference"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaDelete"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaQuery"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaSelect"] }, {"name":"createQuery","parameterTypes":["jakarta.persistence.criteria.CriteriaUpdate"] }, {"name":"createQuery","parameterTypes":["java.lang.String"] }, {"name":"createQuery","parameterTypes":["java.lang.String","java.lang.Class"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String","java.lang.Class[]"] }, {"name":"createStoredProcedureQuery","parameterTypes":["java.lang.String","java.lang.String[]"] }, {"name":"detach","parameterTypes":["java.lang.Object"] }, {"name":"find","parameterTypes":["jakarta.persistence.EntityGraph","java.lang.Object","jakarta.persistence.FindOption[]"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","java.util.Map"] }, {"name":"find","parameterTypes":["java.lang.Class","java.lang.Object","jakarta.persistence.FindOption[]"] }, {"name":"flush","parameterTypes":[] }, {"name":"from","parameterTypes":["jdk.proxy2.$Proxy174"] }, {"name":"getCacheRetrieveMode","parameterTypes":[] }, {"name":"getCacheStoreMode","parameterTypes":[] }, {"name":"getCriteriaBuilder","parameterTypes":[] }, {"name":"getDelegate","parameterTypes":[] }, {"name":"getEntityGraph","parameterTypes":["java.lang.String"] }, {"name":"getEntityGraphs","parameterTypes":["java.lang.Class"] }, {"name":"getEntityManagerFactory","parameterTypes":[] }, {"name":"getFlushMode","parameterTypes":[] }, {"name":"getLockMode","parameterTypes":["java.lang.Object"] }, {"name":"getMetamodel","parameterTypes":[] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getReference","parameterTypes":["java.lang.Class","java.lang.Object"] }, {"name":"getReference","parameterTypes":["java.lang.Object"] }, {"name":"getTransaction","parameterTypes":[] }, {"name":"isJoinedToTransaction","parameterTypes":[] }, {"name":"isOpen","parameterTypes":[] }, {"name":"joinTransaction","parameterTypes":[] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"lock","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","jakarta.persistence.LockOption[]"] }, {"name":"merge","parameterTypes":["java.lang.Object"] }, {"name":"of","parameterTypes":["jdk.proxy2.$Proxy174"] }, {"name":"persist","parameterTypes":["java.lang.Object"] }, {"name":"refresh","parameterTypes":["java.lang.Object"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.LockModeType","java.util.Map"] }, {"name":"refresh","parameterTypes":["java.lang.Object","java.util.Map"] }, {"name":"refresh","parameterTypes":["java.lang.Object","jakarta.persistence.RefreshOption[]"] }, {"name":"remove","parameterTypes":["java.lang.Object"] }, {"name":"runWithConnection","parameterTypes":["jakarta.persistence.ConnectionConsumer"] }, {"name":"setCacheRetrieveMode","parameterTypes":["jakarta.persistence.CacheRetrieveMode"] }, {"name":"setCacheStoreMode","parameterTypes":["jakarta.persistence.CacheStoreMode"] }, {"name":"setFlushMode","parameterTypes":["jakarta.persistence.FlushModeType"] }, {"name":"setProperty","parameterTypes":["java.lang.String","java.lang.Object"] }, {"name":"unwrap","parameterTypes":["java.lang.Class"] }, {"name":"valueOf","parameterTypes":["jdk.proxy2.$Proxy174"] }]
 },
 {
   "name":"jakarta.persistence.EntityManagerFactory",
   "queryAllDeclaredMethods":true,
   "queryAllPublicMethods":true,
-  "methods":[{"name":"<init>","parameterTypes":["jdk.proxy2.$Proxy178"] }, {"name":"addNamedEntityGraph","parameterTypes":["java.lang.String","jakarta.persistence.EntityGraph"] }, {"name":"addNamedQuery","parameterTypes":["java.lang.String","jakarta.persistence.Query"] }, {"name":"callInTransaction","parameterTypes":["java.util.function.Function"] }, {"name":"createEntityAgent","parameterTypes":[] }, {"name":"createEntityAgent","parameterTypes":["java.util.Map"] }, {"name":"from","parameterTypes":["jdk.proxy2.$Proxy178"] }, {"name":"getMetamodel","parameterTypes":[] }, {"name":"getNamedEntityGraphs","parameterTypes":["java.lang.Class"] }, {"name":"getNamedQueries","parameterTypes":["java.lang.Class"] }, {"name":"getPersistenceUnitUtil","parameterTypes":[] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getTransactionType","parameterTypes":[] }, {"name":"isOpen","parameterTypes":[] }, {"name":"of","parameterTypes":["jdk.proxy2.$Proxy178"] }, {"name":"runInTransaction","parameterTypes":["java.util.function.Consumer"] }, {"name":"unwrap","parameterTypes":["java.lang.Class"] }, {"name":"valueOf","parameterTypes":["jdk.proxy2.$Proxy178"] }]
+  "methods":[{"name":"<init>","parameterTypes":["jdk.proxy2.$Proxy173"] }, {"name":"addNamedEntityGraph","parameterTypes":["java.lang.String","jakarta.persistence.EntityGraph"] }, {"name":"addNamedQuery","parameterTypes":["java.lang.String","jakarta.persistence.Query"] }, {"name":"callInTransaction","parameterTypes":["java.util.function.Function"] }, {"name":"createEntityAgent","parameterTypes":[] }, {"name":"createEntityAgent","parameterTypes":["java.util.Map"] }, {"name":"from","parameterTypes":["jdk.proxy2.$Proxy173"] }, {"name":"getMetamodel","parameterTypes":[] }, {"name":"getNamedEntityGraphs","parameterTypes":["java.lang.Class"] }, {"name":"getNamedQueries","parameterTypes":["java.lang.Class"] }, {"name":"getPersistenceUnitUtil","parameterTypes":[] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getTransactionType","parameterTypes":[] }, {"name":"isOpen","parameterTypes":[] }, {"name":"of","parameterTypes":["jdk.proxy2.$Proxy173"] }, {"name":"runInTransaction","parameterTypes":["java.util.function.Consumer"] }, {"name":"unwrap","parameterTypes":["java.lang.Class"] }, {"name":"valueOf","parameterTypes":["jdk.proxy2.$Proxy173"] }]
 },
 {
   "name":"jakarta.persistence.EntityResult",
@@ -2482,12 +2394,6 @@
   "queryAllDeclaredMethods":true
 },
 {
-  "name":"jakarta.validation.ConstraintValidator",
-  "queryAllDeclaredMethods":true,
-  "queryAllPublicMethods":true,
-  "methods":[{"name":"initialize","parameterTypes":["java.lang.annotation.Annotation"] }, {"name":"isValid","parameterTypes":["java.lang.Object","jakarta.validation.ConstraintValidatorContext"] }]
-},
-{
   "name":"jakarta.validation.ConstraintViolation"
 },
 {
@@ -2509,8 +2415,7 @@
 },
 {
   "name":"jakarta.validation.constraints.Email",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"flags","parameterTypes":[] }, {"name":"groups","parameterTypes":[] }, {"name":"message","parameterTypes":[] }, {"name":"payload","parameterTypes":[] }, {"name":"regexp","parameterTypes":[] }]
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"jakarta.validation.constraints.Max",
@@ -2522,8 +2427,7 @@
 },
 {
   "name":"jakarta.validation.constraints.NotBlank",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"groups","parameterTypes":[] }, {"name":"message","parameterTypes":[] }, {"name":"payload","parameterTypes":[] }]
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"jakarta.validation.constraints.Size",
@@ -2648,8 +2552,7 @@
 {
   "name":"java.lang.Record",
   "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"java.lang.Runtime",
@@ -2837,22 +2740,10 @@
   "name":"java.security.SecureRandomParameters"
 },
 {
-  "name":"java.security.interfaces.EdECKey",
-  "methods":[{"name":"getParams","parameterTypes":[] }]
-},
-{
   "name":"java.security.interfaces.RSAPrivateKey"
 },
 {
   "name":"java.security.interfaces.RSAPublicKey"
-},
-{
-  "name":"java.security.interfaces.XECKey",
-  "methods":[{"name":"getParams","parameterTypes":[] }]
-},
-{
-  "name":"java.security.spec.NamedParameterSpec",
-  "methods":[{"name":"getName","parameterTypes":[] }]
 },
 {
   "name":"java.sql.Blob"
@@ -2959,8 +2850,7 @@
   "name":"java.util.Locale"
 },
 {
-  "name":"java.util.Map",
-  "queryAllDeclaredMethods":true
+  "name":"java.util.Map"
 },
 {
   "name":"java.util.SequencedCollection"
@@ -2979,10 +2869,6 @@
 },
 {
   "name":"java.util.UUID"
-},
-{
-  "name":"java.util.concurrent.Callable",
-  "methods":[{"name":"call","parameterTypes":[] }]
 },
 {
   "name":"java.util.concurrent.Executor"
@@ -3602,10 +3488,6 @@
 {
   "name":"org.hibernate.StatelessSession",
   "methods":[{"name":"setProperty","parameterTypes":["java.lang.String","java.lang.Object"] }]
-},
-{
-  "name":"org.hibernate.action.internal.ActionLogging_$logger",
-  "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
 },
 {
   "name":"org.hibernate.annotations.Any",
@@ -4981,10 +4863,6 @@
   "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
 },
 {
-  "name":"org.hibernate.event.internal.EventListenerLogging_$logger",
-  "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
-},
-{
   "name":"org.hibernate.event.spi.EventType",
   "allDeclaredFields":true
 },
@@ -5054,9 +4932,6 @@
 {
   "name":"org.hibernate.internal.util.cache.InternalCacheFactoryImpl",
   "queryAllPublicMethods":true
-},
-{
-  "name":"org.hibernate.jpa.HibernatePersistenceProvider"
 },
 {
   "name":"org.hibernate.jpa.internal.JpaLogger_$logger",
@@ -5143,10 +5018,6 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
-  "name":"org.hibernate.resource.transaction.internal.SynchronizationLogging_$logger",
-  "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
-},
-{
   "name":"org.hibernate.service.Service",
   "queryAllPublicMethods":true
 },
@@ -5196,28 +5067,6 @@
 },
 {
   "name":"org.hibernate.validator.HibernateValidator"
-},
-{
-  "name":"org.hibernate.validator.internal.constraintvalidators.AbstractEmailValidator",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"initialize","parameterTypes":["java.lang.annotation.Annotation"] }, {"name":"isValid","parameterTypes":["java.lang.Object","jakarta.validation.ConstraintValidatorContext"] }]
-},
-{
-  "name":"org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true,
-  "queryAllPublicConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"initialize","parameterTypes":["java.lang.annotation.Annotation"] }, {"name":"isValid","parameterTypes":["java.lang.CharSequence","jakarta.validation.ConstraintValidatorContext"] }, {"name":"isValid","parameterTypes":["java.lang.Object","jakarta.validation.ConstraintValidatorContext"] }]
-},
-{
-  "name":"org.hibernate.validator.internal.constraintvalidators.bv.NotBlankValidator",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true,
-  "queryAllPublicConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"isValid","parameterTypes":["java.lang.Object","jakarta.validation.ConstraintValidatorContext"] }]
 },
 {
   "name":"org.hibernate.validator.internal.engine.AbstractConfigurationImpl",
@@ -5416,8 +5265,7 @@
 },
 {
   "name":"org.springframework.aot.hint.annotation.RegisterReflectionForBinding",
-  "queryAllDeclaredMethods":true,
-  "methods":[{"name":"value","parameterTypes":[] }]
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"org.springframework.beans.factory.Aware",
@@ -7961,7 +7809,7 @@
   "name":"org.springframework.data.jpa.repository.support.SimpleJpaRepository",
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":["org.springframework.data.jpa.repository.support.JpaEntityInformation","jakarta.persistence.EntityManager"] }, {"name":"delete","parameterTypes":["java.lang.Object"] }, {"name":"findActiveByEmail","parameterTypes":["java.lang.String"] }, {"name":"findByEmail","parameterTypes":["java.lang.String"] }, {"name":"findByToken","parameterTypes":["java.lang.String"] }, {"name":"save","parameterTypes":["java.lang.Object"] }]
+  "methods":[{"name":"<init>","parameterTypes":["org.springframework.data.jpa.repository.support.JpaEntityInformation","jakarta.persistence.EntityManager"] }, {"name":"findByEmail","parameterTypes":["java.lang.String"] }]
 },
 {
   "name":"org.springframework.data.jpa.util.HibernateProxyDetector",
@@ -8365,13 +8213,7 @@
   "name":"org.springframework.hateoas.server.mvc.TypeConstrainedJacksonJsonHttpMessageConverter"
 },
 {
-  "name":"org.springframework.http.HttpStatus",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"org.springframework.http.HttpStatusCode",
-  "queryAllDeclaredMethods":true
+  "name":"org.springframework.http.HttpStatus"
 },
 {
   "name":"org.springframework.http.ProblemDetail"
@@ -8997,15 +8839,7 @@
   "methods":[{"name":"close","parameterTypes":[] }, {"name":"onApplicationEvent","parameterTypes":["org.springframework.context.ApplicationEvent"] }, {"name":"shutdown","parameterTypes":[] }]
 },
 {
-  "name":"org.springframework.security.core.GrantedAuthority",
-  "queryAllDeclaredMethods":true
-},
-{
-  "name":"org.springframework.security.core.authority.SimpleGrantedAuthority",
-  "allDeclaredFields":true,
-  "queryAllDeclaredMethods":true,
-  "queryAllDeclaredConstructors":true,
-  "methods":[{"name":"getAuthority","parameterTypes":[] }]
+  "name":"org.springframework.security.core.GrantedAuthority"
 },
 {
   "name":"org.springframework.security.core.userdetails.UserDetails",
