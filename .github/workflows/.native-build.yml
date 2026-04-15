@@ -7,52 +7,22 @@ on:
     branches: ["**"]
 
 jobs:
-  compile:
-    name: Clean Package (Native)
-    runs-on: ubuntu-latest
-    container:
-      image: maven:3.9.9-eclipse-temurin-21
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Run Maven clean package
-        run:  PROFILE_STATE=prod mvn clean package -Pnative -Dmaven.test.skip=true
-
-      - name: List target
-        run: ls -la target/
-
-      - name: Upload target artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: target
-          path: target/
-
-  build:
+  build-native:
     name: Build Native Image
     runs-on: ubuntu-latest
-    needs: compile
-    container:
-      image: ghcr.io/graalvm/native-image-community:21
-      options: --entrypoint ""
     steps:
-      - name: Install required tools
-        run: microdnf install -y gzip tar curl findutils
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/checkout@v4
-
-      - name: Install Maven
-        run: |
-          curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.tar.gz | tar -xz -C /opt
-          ln -s /opt/apache-maven-3.9.9/bin/mvn /usr/local/bin/mvn
-
-      - name: Download target artifact
-        uses: actions/download-artifact@v4
+      - name: Setup GraalVM
+        uses: graalvm/setup-graalvm@v1
         with:
-          name: target
-          path: target/
+          java-version: '21'
+          distribution: 'graalvm-community' # Sets up both Java 21 AND Native Image Builder
+          cache: 'maven'
 
-      - name: Run native compile
-        run:  PROFILE_STATE=prod mvn -Pnative native:compile -Dmaven.test.skip=true
+      - name: Build Native Image
+        run: PROFILE_STATE=prod ./mvnw clean -Pnative native:compile -Dmaven.test.skip=true
 
       - name: List target
         run: ls -la target/
