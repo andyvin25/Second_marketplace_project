@@ -44,6 +44,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
     private RateLimiterService rateLimiterService;
 
     @Autowired
+    @Lazy
     private UserDetailsService userDetailsService;
 
     @Autowired
