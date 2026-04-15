@@ -11,7 +11,7 @@ jobs:
     name: Clean Package (Native)
     runs-on: ubuntu-latest
     container:
-      image: maven:3.9.14-eclipse-temurin-25
+      image: maven:3.9.14-eclipse-temurin-21
     steps:
       - uses: actions/checkout@v4
 
